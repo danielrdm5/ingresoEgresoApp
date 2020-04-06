@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ingreso-egresp-app": {
+      "hosting": {
+        "ingresoEgresoApp": [
+          "ingreso-egresp-app"
+        ]
+      }
+    }
+  }
+}
