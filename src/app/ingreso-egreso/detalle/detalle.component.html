@@ -2,14 +2,14 @@
     <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Detalle de ingreso egreso</h4>
+            <h4 class="card-title">Detail income - expenses</h4>
 
             <table class="table">
               <thead>
                 <tr>
-                  <th>Descripción</th>
-                  <th>Monto</th>
-                  <th>Tipo</th>
+                  <th>Description</th>
+                  <th>Amount</th>
+                  <th>Type</th>
                   <th></th>
                 </tr>
               </thead>
@@ -18,12 +18,12 @@
                 <tr *ngFor="let item of ingresosEgresos | ordenIngreso" >
                   <td>{{ item.descripcion }}</td>
                   <td>{{ item.monto | currency }}</td>
-                  <td [class.text-success] = "item.tipo === 'ingreso'" 
-                      [class.text-danger] = "item.tipo === 'egreso'">{{ item.tipo }}</td>
+                  <td [class.text-success] = "item.tipo === 'income'" 
+                      [class.text-danger] = "item.tipo === 'expense'">{{ item.tipo }}</td>
                   <td>
                     <button (click) = "borrar( item.uid )" type = "button" class="btn btn-danger">
                       <i class="fa fa-trash" ></i>
-                      Borrar
+                      Delete
                     </button>
                   </td>
                 </tr>

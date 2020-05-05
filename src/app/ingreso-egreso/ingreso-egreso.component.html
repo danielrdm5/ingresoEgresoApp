@@ -2,15 +2,15 @@
     <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Agregar Ingreso / Egreso</h4>
+            <h4 class="card-title">Add Income / Expense</h4>
             <p class="card-description">
-              Especifique el monto y el tipo
+              Specify amount
             </p>
 
             <form [formGroup] = "ingresoEgresoForm" (ngSubmit) = guardar() >
               
               <div class="form-group">
-                <label>Descripción</label>
+                <label>Description</label>
                 <input type="text" 
                        class="form-control" 
                        placeholder="Descripción"
@@ -19,22 +19,22 @@
               </div>
 
               <div class="form-group">
-                  <label>Monto</label>
+                  <label>Amount</label>
                   <input type="number" 
                          class="form-control" 
                          placeholder="Monto"
                          formControlName="monto"
                          name="monto">
                     <p>
-                      Debe de ser un monto positivo
+                      Must be a positive value
                     </p>
                 </div>
 
               <div class="form-group">
-                  <label>Tipo</label>
+                  <label>Type</label>
                   <br>
-                  <button *ngIf="tipoMovimiento === 'ingreso'" (click)="tipoMovimiento = 'egreso'" type="button" class="btn btn-primary btn-block">Ingreso</button>
-                  <button *ngIf="tipoMovimiento === 'egreso'" (click)="tipoMovimiento = 'ingreso'" type="button" class="btn btn-warning btn-block">Egreso</button>
+                  <button *ngIf="tipoMovimiento === 'income'" (click)="tipoMovimiento = 'expense'" type="button" class="btn btn-primary btn-block">Income</button>
+                  <button *ngIf="tipoMovimiento === 'expense'" (click)="tipoMovimiento = 'income'" type="button" class="btn btn-warning btn-block">Expense</button>
               </div>
 
               <hr>
@@ -42,7 +42,7 @@
                       [disabled] = "ingresoEgresoForm.invalid || loading">
                 <i *ngIf="!loading" class="fa fa-save"></i>
                 <i *ngIf="loading" class="fa fa-spin fa-sync"></i>
-                Agregar
+                Add
               </button>
 
               <!-- 
@@ -52,7 +52,7 @@
                 </button> 
               -->
               
-              <button type="reset" class="btn btn-light">Cancelar</button>
+              <button type="reset" class="btn btn-light">Cancel</button>
 
             </form>
           </div>

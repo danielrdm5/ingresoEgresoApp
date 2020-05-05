@@ -17,7 +17,7 @@ import * as ui from '../shared/ui.actions';
 export class IngresoEgresoComponent implements OnInit, OnDestroy {
 
   ingresoEgresoForm: FormGroup;
-  tipoMovimiento = 'ingreso';
+  tipoMovimiento = 'income';
   loading = false;
   uiSubscription: Subscription;
 
@@ -61,7 +61,7 @@ export class IngresoEgresoComponent implements OnInit, OnDestroy {
           this.ingresoEgresoForm.reset();
           this.store.dispatch(ui.stopLoading());
           Swal.fire({
-            titleText: this.tipoMovimiento + ' creado',
+            titleText: this.tipoMovimiento + ' created successfuly.',
             icon: 'success',
             title: 'woot!',
           });
@@ -69,7 +69,7 @@ export class IngresoEgresoComponent implements OnInit, OnDestroy {
         .catch( err => {
           this.store.dispatch(ui.stopLoading());
           Swal.fire({
-            titleText: this.tipoMovimiento + ' no creado',
+            titleText: this.tipoMovimiento + ' could not be created.',
             icon: 'error',
             title: 'woot!',
             text: 'Error: ' + err.message

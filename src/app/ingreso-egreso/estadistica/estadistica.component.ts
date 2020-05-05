@@ -34,7 +34,7 @@ export class EstadisticaComponent implements OnInit {
     this.inicializarValores();
     for (const item of items) {
       
-      if ( item.tipo === 'ingreso' ) {
+      if ( item.tipo === 'income' ) {
         this.totalIngresos += item.monto;
         this.ingresos ++;
       } else {
